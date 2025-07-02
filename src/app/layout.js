@@ -1,4 +1,5 @@
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "../Components/Header/Header.jsx";
 import Footer from "@/Components/Footer/Footer";
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
               <FavContext>
                 <Header />
                 {children}
+                <Analytics />
                 <Footer />
                 <ToastContainer />
               </FavContext>

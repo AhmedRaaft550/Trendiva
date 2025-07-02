@@ -11,7 +11,6 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     legacyBrowsers: false,
-    modern: true,
   },
 };
 
