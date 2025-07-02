@@ -1,0 +1,199 @@
+.myHeader {
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 15px 20px 5px 20px;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  text-align: center;
+}
+
+.hamburger {
+  display: block;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--color-icon);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 54vh;
+  width: 100vw;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  gap: 30px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+}
+
+.navHidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navActive {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--color-icon);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.centerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+}
+
+.icon {
+  color: var(--color-icon);
+  transition: color 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.icon:hover {
+  color: var(--color-primary);
+}
+
+.headerContent {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .headerTop {
+    display: none;
+  }
+
+  .mobileOverlay {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .headerContent {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .centerSection {
+    flex-direction: row;
+    gap: 1.5rem;
+    width: auto;
+  }
+}
+
+.cartIcon {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  color: var(--color-icon);
+  transition: color 0.3s ease;
+}
+.cartIcon:hover {
+  color: var(--color-btn-hover);
+}
+
+.cartBadge {
+  position: absolute;
+  top: -19px;
+  right: -10px;
+  background-color: var(--color-accent);
+  color: var(--color-btn-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.7);
+  pointer-events: none;
+  user-select: none;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5px;
+}
+
+.favBagde {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  background-color: var(--color-accent);
+  color: var(--color-btn-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.7);
+  pointer-events: none;
+  user-select: none;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,141 @@
+.section {
+  background-color: var(--color-bg);
+  padding: 3rem 2rem;
+  font-family: "Rubik", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  padding: 1rem 0;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  outline: none;
+}
+
+.imageWrapper {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background-color: #f8f9fb;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image,
+.card:focus-visible .image {
+  transform: scale(1.05);
+}
+
+.info {
+  padding: 1rem 1.5rem 1.5rem;
+  color: var(--color-heading);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 140px;
+}
+
+.productTitle {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.productDesc {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.4;
+  height: 3.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.productPrice {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-top: auto;
+}
+
+.footer {
+  padding: 0 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  padding: 0.6rem 1.8rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+  user-select: none;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+.card:hover .btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.btn:hover {
+  background-color: var(--color-btn-hover);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  background-color: var(--color-btn-active);
+  transform: translateY(0);
+}

@@ -1,0 +1,63 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"); */
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Rubik", sans-serif;
+  font-display: swap;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  /* Colors */
+  --color-primary: #1e293b;
+  --color-secondary: #475569;
+  --color-accent: #f59e0b;
+
+  /* Backgrounds */
+  --color-bg: #f8fafc;
+  --color-card-bg: #ffffff;
+  --color-btn-bg: var(--color-accent);
+  --color-btn-hover: #d97706;
+  --color-btn-active: #b45309;
+
+  /* Text */
+  --color-text: var(--color-primary);
+  --color-text-muted: var(--color-secondary);
+  --color-text-accent: var(--color-accent);
+  --color-btn-text: #ffffff;
+  --color-heading: #0f172a;
+
+  /* Borders */
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+
+  /* Tags */
+  --color-tag-bg: #e2e8f0;
+  --color-tag-text: #334155;
+  --color-tag-hover-bg: #f59e0b;
+  --color-tag-hover-text: #ffffff;
+
+  /* Icons */
+  --color-icon: var(--color-accent);
+
+  /* Shadows And Radius */
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 10px 35px rgba(0, 0, 0, 0.12);
+  --border-radius: 12px;
+
+  /* Fonts */
+  --font-family: "Ro  boto Condensed", sans-serif;
+}
+
+img {
+  pointer-events: none;
+}

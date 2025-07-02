@@ -1,0 +1,140 @@
+.cardDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: var(--color-bg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+  max-width: 1100px;
+  margin: 3rem auto;
+  flex-wrap: wrap;
+  transition: box-shadow 0.3s ease;
+}
+
+.cardDetails:hover {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 360px;
+  height: 374px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.ProductImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.ProductImage:hover {
+  transform: scale(1.06);
+}
+
+.myCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 320px;
+}
+
+.myCardContainer p {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.myCardContainer strong {
+  color: var(--color-accent);
+}
+.reviewSection {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.reviewBox {
+  background-color: white;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 10px;
+  margin-top: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.reviewBox:hover {
+  transform: translateY(-2px);
+}
+
+.reviewBox p {
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  margin: 0.2rem 0;
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  padding: 6px 14px;
+  margin-right: 8px;
+  margin-top: 8px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.cardBtn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+  color: var(--color-primary);
+}
+
+.cardBtn:hover {
+  background-color: #ae720a;
+  transform: translateY(-2px);
+}
+
+.cardBtn:active {
+  transform: translateY(0);
+}
+
+.favoriteIcon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.favoriteIcon:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,124 @@
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-btn-text);
+  padding: 40px 20px 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-text-accent);
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.socialIcons svg {
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--color-btn-text);
+  transition: color 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+.socialIcons svg:hover {
+  color: var(--color-text-accent);
+}
+
+.column h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--color-btn-text);
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.column ul li:hover {
+  color: var(--color-text-accent);
+}
+
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletterForm input {
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  outline: none;
+  width: 100%;
+  max-width: 300px;
+}
+
+.newsletterForm input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.newsletterForm button {
+  min-width: 110px;
+  padding: 10px;
+  border: none;
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletterForm button:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.bottomBar {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 30px;
+}
