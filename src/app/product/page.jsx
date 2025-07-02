@@ -2,8 +2,8 @@
 
 import { useContext } from "react";
 import { GlobalContext } from "../../../context/ProductContext";
-import styles from "../../Components/landing/landing.module.css";
 import ProductCardLanding from "./ProductCardLanding";
+import styles from "../../Components/landing/landing.module.css";
 
 const Product = () => {
   const data = useContext(GlobalContext);
@@ -33,7 +33,7 @@ const Product = () => {
     );
   }
 
-  return <ProductCardLanding data={{ data, styles }} />;
+  return <ProductCardLanding data={data} styles={styles} />;
 };
 
 export default Product;

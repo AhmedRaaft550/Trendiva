@@ -1,4 +1,8 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const ProductCardLanding = ({ data, styles }) => {
+  console.log(data);
   return (
     <>
       <section
@@ -34,7 +38,7 @@ const ProductCardLanding = ({ data, styles }) => {
                 alt={`Image of ${product.title}`}
                 width={300}
                 height={300}
-                className={PImage}
+                className={styles.PImage}
                 loading={i > 0 ? "lazy" : "eager"}
                 priority={i === 0}
                 sizes="(max-width: 768px) 100vw, 300px"
