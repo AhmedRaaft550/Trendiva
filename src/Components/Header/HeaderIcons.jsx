@@ -10,7 +10,7 @@ import { GlobalCartContext } from "../../../context/CartContext";
 import { GlobalFavContext } from "../../../context/FavContext";
 import SearchBar from "./SearchBar";
 
-const HeaderIcons = () => {
+const HeaderIcons = ({ closeMenu }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
   const { cart } = useContext(GlobalCartContext);
@@ -26,18 +26,19 @@ const HeaderIcons = () => {
   const handleLogout = () => {
     localStorage.removeItem("username");
     setIsLoggedIn(false);
-    showToast("You have logged out", "success"); //
+    showToast("You have logged out", "success");
     router.push("/");
   };
 
   return (
-    <div className="flex items-center justify-center gap-3 w-full relative">
-      <SearchBar />
+    <div className={styles.searchIcon}>
+      <SearchBar closeMenu={closeMenu} />
 
       <Link
         href="/fav"
         className={styles.cartIcon}
         style={{ position: "relative" }}
+        onClick={closeMenu}
       >
         <span className={styles.favBagde}>{fav.length}</span>
         <FaHeart
@@ -50,6 +51,7 @@ const HeaderIcons = () => {
         href="/cart"
         className={styles.cartIcon}
         style={{ position: "relative" }}
+        onClick={closeMenu}
       >
         <span className={styles.cartBadge}>{cart.length}</span>
         <FaShoppingCart className={styles.icon} />
@@ -57,7 +59,10 @@ const HeaderIcons = () => {
 
       {isLoggedIn ? (
         <button
-          onClick={handleLogout}
+          onClick={() => {
+            handleLogout();
+            closeMenu?.();
+          }}
           className={`${styles.icon} cursor-pointer bg-transparent border-none`}
           aria-label="Logout"
           title="Logout"
@@ -66,7 +71,7 @@ const HeaderIcons = () => {
           <FaSignOutAlt />
         </button>
       ) : (
-        <Link href="/login" aria-label="Login">
+        <Link href="/login" aria-label="Login" onClick={closeMenu}>
           <FaUser className={`${styles.icon} cursor-pointer`} />
         </Link>
       )}

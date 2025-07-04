@@ -18,7 +18,7 @@ const ClothesContext = ({ children }) => {
         const json = await res.json();
         setClothesData(json);
       } catch (err) {
-        setError(err.message);
+        setError("Error 404, Please try again ...");
       } finally {
         setLoading(false);
       }

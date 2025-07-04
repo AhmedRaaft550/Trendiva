@@ -1,8 +1,15 @@
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ProductCardLanding = ({ data, styles }) => {
-  console.log(data);
+  const router = useRouter();
+
+  const handleDetailsClick = (id) => {
+    router.push(`/product/${id}`);
+  };
+
   return (
     <>
       <section
@@ -27,49 +34,42 @@ const ProductCardLanding = ({ data, styles }) => {
             role="listitem"
             aria-labelledby={`product-title-${product.id}`}
           >
-            <Link
-              href={`/product/${product.id}`}
-              className="block"
-              aria-label={`View details for ${product.title}`}
-              tabIndex={0}
-            >
-              <Image
-                src={product.images[0]}
-                alt={`Image of ${product.title}`}
-                width={300}
-                height={300}
-                className={styles.PImage}
-                loading={i > 0 ? "lazy" : "eager"}
-                priority={i === 0}
-                sizes="(max-width: 768px) 100vw, 300px"
-              />
-              <div className={styles.cardDes}>
-                <h2
-                  id={`product-title-${product.id}`}
-                  className="text-xl font-semibold"
-                >
-                  {product.title}
-                </h2>
-                <p className="text-sm text-gray-600">
-                  {product.description.length > 50
-                    ? product.description.slice(0, 50) + "..."
-                    : product.description}
-                </p>
-                <p className="font-medium text-black">
-                  Price: ${product.price}
-                </p>
-              </div>
-              <div className={styles.cartBtn}>
-                <button
-                  className={styles.btn}
-                  aria-label={`Details for ${product.title}`}
-                  type="button"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Details
-                </button>
-              </div>
-            </Link>
+            <Image
+              src={product.images[0]}
+              alt={`Image of ${product.title}`}
+              width={300}
+              height={300}
+              className={styles.PImage}
+              loading={i > 0 ? "lazy" : "eager"}
+              priority={i === 0}
+              sizes="(max-width: 768px) 100vw, 300px"
+            />
+
+            <div className={styles.cardDes}>
+              <h2
+                id={`product-title-${product.id}`}
+                className="text-xl font-semibold"
+              >
+                {product.title}
+              </h2>
+              <p className="text-sm text-gray-600">
+                {product.description.length > 50
+                  ? product.description.slice(0, 50) + "..."
+                  : product.description}
+              </p>
+              <p className="font-medium text-black">Price: ${product.price}</p>
+            </div>
+
+            <div className={styles.cartBtn}>
+              <button
+                className={styles.btn}
+                aria-label={`Details for ${product.title}`}
+                type="button"
+                onClick={() => handleDetailsClick(product.id)}
+              >
+                Details
+              </button>
+            </div>
           </article>
         ))}
       </main>

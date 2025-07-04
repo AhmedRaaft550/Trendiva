@@ -17,8 +17,6 @@ const ClothesId = () => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [singleProduct, setSingleProduct] = useState(null);
 
-  console.log(singleProduct);
-
   const isItemInStorage = useCallback((key, id) => {
     try {
       const data = JSON.parse(localStorage.getItem(key) || "[]");
@@ -44,10 +42,10 @@ const ClothesId = () => {
 
     const alreadyInCart = isItemInStorage("cart", singleProduct.id);
     if (alreadyInCart) {
-      showToast("Product is already in cart", "error");
+      showToast("Product is already in cart", "error", "Go to Cart", "/cart");
     } else {
       addToCart(singleProduct);
-      showToast("Product added to cart", "success");
+      showToast("Product added to cart", "success", "Go to Cart", "/cart");
     }
   }, [singleProduct, isItemInStorage, addToCart]);
 
@@ -56,16 +54,31 @@ const ClothesId = () => {
 
     const alreadyInFav = isItemInStorage("fav", singleProduct.id);
     if (alreadyInFav) {
-      showToast("Product is already in favorites", "error");
+      showToast(
+        "Product is already in favorites",
+        "error",
+        "Go to favorites",
+        "/fav"
+      );
     } else {
       addToFav(singleProduct);
-      showToast("Product added to favorites", "success");
+      showToast(
+        "Product added to favorites",
+        "success",
+        "Go to favorites",
+        "/fav"
+      );
       setIsFavorite(true);
     }
   }, [singleProduct, isItemInStorage, addToFav]);
 
   if (error) return <h1>Failed to load the data (404)</h1>;
-  if (!clothesData || !singleProduct) return <h1>Loading product...</h1>;
+  if (!clothesData || !singleProduct)
+    return (
+      <h1 className="text-center text-[var(--color-accent)] font-bold">
+        Loading product...
+      </h1>
+    );
 
   return (
     <ClothesCardID

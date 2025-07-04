@@ -36,18 +36,22 @@ const Header = () => {
         }`}
       >
         <nav className={styles.navLinks} aria-label="Mobile navigation">
-          <Link href="/" className={styles.link} onClick={closeMenu}>
+          <Link className={styles.mobileLink} href="/" onClick={closeMenu}>
             Home
           </Link>
-          <Link href="/" className={styles.link} onClick={closeMenu}>
+          <Link
+            className={styles.mobileLink}
+            href="/clothesProduct"
+            onClick={closeMenu}
+          >
             Shop
           </Link>
-          <Link href="/about" className={styles.link} onClick={closeMenu}>
+          <Link className={styles.mobileLink} href="/about" onClick={closeMenu}>
             About
           </Link>
         </nav>
         <div className={styles.centerSection}>
-          <HeaderIcons />
+          <HeaderIcons closeMenu={closeMenu} />
         </div>
       </div>
 
@@ -60,7 +64,7 @@ const Header = () => {
           <Link className={styles.link} href="/">
             Home
           </Link>
-          <Link className={styles.link} href="/">
+          <Link className={styles.link} href="/clothesProduct">
             Shop
           </Link>
           <Link className={styles.link} href="/about">

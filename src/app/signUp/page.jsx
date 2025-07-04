@@ -41,6 +41,7 @@ const SignUpForm = () => {
   });
 
   const onSubmit = (data) => {
+    console.log("Form Data:", data);
     showToast(`Account Created Successfully, ${data.name}!`, "success");
     router.push("/login");
   };

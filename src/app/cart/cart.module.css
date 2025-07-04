@@ -135,6 +135,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.cartLink {
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 
 .emptyText {

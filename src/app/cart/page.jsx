@@ -21,6 +21,9 @@ const Cart = () => {
     return (
       <div className={styles.emptyCart}>
         <h2 className={styles.emptyText}>Your cart is currently empty 🛒</h2>
+        <Link href="/clothesProduct" className={styles.cartLink}>
+          Add A New Product
+        </Link>
       </div>
     );
   }
@@ -66,9 +69,8 @@ const Cart = () => {
 
       <div className={styles.cartFooter}>
         <h3 className={styles.total}>Total: ${total.toFixed(2)}</h3>
-        <Link href="/checkout">
-          <button className={styles.checkoutBtn}>Proceed to Checkout</button>
-        </Link>
+
+        <button className={styles.checkoutBtn}>Proceed to Checkout</button>
       </div>
     </section>
   );

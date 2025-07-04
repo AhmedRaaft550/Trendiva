@@ -10,7 +10,7 @@ const NewArrival = () => {
   const data = useContext(GlobalContext);
 
   if (!data) {
-    return <p className={styles.loading}>Loading new arrivals...</p>;
+    return <p className={styles.loading}>Loading ...</p>;
   }
 
   return (

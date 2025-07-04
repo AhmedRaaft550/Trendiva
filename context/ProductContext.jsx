@@ -15,7 +15,6 @@ const ProductContext = ({ children }) => {
       const json = await res.json();
       setData(json.products);
     } catch (err) {
-      console.error("Fetch error:", err);
       setError("Failed to load products.");
     }
   };

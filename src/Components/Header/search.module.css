@@ -8,14 +8,23 @@
   width: 100%;
   padding: 0.6rem 1rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-accent);
   border-radius: 6px;
+}
+@media (max-width: 767px) {
+  .searchInput {
+    color: #aaa;
+  }
+}
+
+.searchInput:focus {
+  outline: var(--color-accent);
 }
 
 .loader {
   margin-top: 5px;
   font-size: 0.9rem;
-  color: gray;
+  color: var(--color-accent);
 }
 
 .dropdown {
@@ -44,14 +53,14 @@
 }
 
 .thumbnail {
-  width: 40px;
-  height: 40px;
   object-fit: cover;
   margin-right: 10px;
   border-radius: 4px;
+  width: auto;
+  height: auto;
 }
 
 .noResults {
   padding: 0.6rem;
-  color: #666;
+  color: var(--color-accent);
 }

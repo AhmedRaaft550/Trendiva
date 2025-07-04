@@ -88,7 +88,7 @@ const SignForm = ({ data }) => {
           </button>
           <p className={styles.text}>
             Already have an account?{" "}
-            <Link style={{ textDecoration: "underLine" }} href="/login">
+            <Link style={{ textDecoration: "underline" }} href="/login">
               Log in
             </Link>
           </p>

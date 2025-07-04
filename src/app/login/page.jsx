@@ -32,7 +32,10 @@ const Login = () => {
     localStorage.setItem("username", data.username);
     setIsLoggedIn(true);
     showToast(`Welcome back, ${data.username}!`, "success");
-    window.location.href = "/";
+
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 5000);
   };
 
   useEffect(() => {

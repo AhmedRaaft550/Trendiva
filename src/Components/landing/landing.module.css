@@ -133,3 +133,11 @@
   color: var(--color-icon);
   font-size: 1.5rem;
 }
+
+.loading {
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}

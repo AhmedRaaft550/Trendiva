@@ -15,15 +15,11 @@ const Clothes = () => {
   };
 
   if (error) {
-    return <h1 className={styles.loading}>Error: {error}</h1>;
+    return <h1 className={styles.loading}>{error}</h1>;
   }
 
-  if (!clothesData) {
-    return <h1 className={styles.loading}>Loading clothes...</h1>;
-  }
-
-  if (clothesData.length === 0) {
-    return <h1 className={styles.loading}>No clothes available.</h1>;
+  if (!clothesData || clothesData.length === 0) {
+    return <h1 className={styles.loading}>Loading ... </h1>;
   }
 
   return (
@@ -31,7 +27,7 @@ const Clothes = () => {
       <h1>🧥 New Arrivals</h1>
 
       <div className={styles.cardContainer}>
-        {clothesData.slice(0, 5).map((item) => (
+        {clothesData.slice(0, 4).map((item) => (
           <div className={styles.card} key={item.id}>
             <div className={styles.imageWrapper}>
               <Image

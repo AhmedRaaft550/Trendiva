@@ -139,3 +139,11 @@
   background-color: var(--color-btn-active);
   transform: translateY(0);
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}

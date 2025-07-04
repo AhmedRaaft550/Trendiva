@@ -1,11 +1,12 @@
 "use client";
+
 import React, { useState } from "react";
 import styles from "./search.module.css";
 import { useProductSearch } from "../../../hooks/useProductSearch";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const SearchBar = () => {
+const SearchBar = ({ closeMenu }) => {
   const [query, setQuery] = useState("");
   const { results, loading, showDropdown, setShowDropdown } =
     useProductSearch(query);
@@ -13,6 +14,7 @@ const SearchBar = () => {
 
   const handleSelect = (rawId) => {
     setShowDropdown(false);
+    closeMenu?.();
     router.push(`/clothesProduct/${rawId}`);
   };
 
@@ -26,24 +28,18 @@ const SearchBar = () => {
         placeholder="Search products..."
         aria-label="Search products"
         onFocus={() => query && results.length > 0 && setShowDropdown(true)}
-        onBlur={() => setShowDropdown(false)}
+        onBlur={() => setTimeout(() => setShowDropdown(false), 150)} // تأخير الإغلاق حتى يكتمل الضغط
       />
 
       {loading && <div className={styles.loader}>Loading...</div>}
 
       {showDropdown && (
-        <ul
-          className={styles.dropdown}
-          role="listbox"
-          aria-label="Search results"
-          aria-live="polite"
-        >
+        <ul className={styles.dropdown} role="listbox">
           {results.length > 0 ? (
             results.map((item) => (
               <li
                 key={item.id}
                 role="option"
-                aria-selected="false"
                 tabIndex={0}
                 onMouseDown={() => handleSelect(item.rawId)}
                 className={styles.dropdownItem}

@@ -14,7 +14,7 @@ const Landing = () => {
         <Image
           src={landingImg}
           alt="Landing hero showing stylish clothes"
-          priority
+          loading="lazy"
           fill
           style={{ objectFit: "contain" }}
           sizes="(max-width: 768px) 100vw, 100vw"
