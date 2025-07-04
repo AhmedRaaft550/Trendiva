@@ -8,23 +8,12 @@ const ClothesProduct = () => {
   const { clothesData, error } = useContext(MyClothesGlobal);
 
   if (error) {
-    return (
-      <p className="text-red-500 text-center mt-10">
-        Error While Laoding 404 ...
-      </p>
-    );
+    return <p className="text-red-500 text-center mt-6 font-bold">{error}</p>;
   }
 
-  if (!Array.isArray(clothesData) || clothesData.length === 0) {
+  if (!clothesData || clothesData.length === 0) {
     return (
-      <section className={styles.grid}>
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className={`${styles.card} animate-pulse bg-gray-100 h-80`}
-          />
-        ))}
-      </section>
+      <p className="text-red-500 text-center mt-6 font-bold">Loading ...</p>
     );
   }
 

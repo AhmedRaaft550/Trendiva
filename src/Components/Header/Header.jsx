@@ -15,7 +15,9 @@ const Header = () => {
   return (
     <header className={styles.myHeader} role="banner">
       <div className={styles.headerTop}>
-        <h1 className={styles.logo}>Trendiva</h1>
+        <Link href="/">
+          <h1 className={styles.logo}>Trendiva</h1>
+        </Link>
 
         <button
           onClick={toggleMenu}
@@ -50,7 +52,9 @@ const Header = () => {
       </div>
 
       <div className={styles.headerContent}>
-        <span className={styles.logo}>Trendiva</span>
+        <Link href="/">
+          <span className={styles.logo}>Trendiva</span>
+        </Link>
 
         <nav className={styles.navLinks} aria-label="Main navigation">
           <Link className={styles.link} href="/">

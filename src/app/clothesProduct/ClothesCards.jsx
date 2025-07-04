@@ -1,10 +1,9 @@
 "use client";
-
 import styles from "./clothesProduct.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const ClothesCards = ({ clothesData }) => {
+const ClothesCards = ({ clothesData, error }) => {
   return (
     <section className={styles.section} aria-label="New arrival clothes">
       <h1 className={styles.title}>NEW ARRIVAL</h1>

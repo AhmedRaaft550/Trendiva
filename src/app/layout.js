@@ -1,16 +1,16 @@
 import { Geist } from "next/font/google";
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
+
 import Header from "../Components/Header/Header.jsx";
 import Footer from "@/Components/Footer/Footer";
 import ProductContext from "../../context/ProductContext";
 import ClothesContext from "../../context/ClothesContext";
 import CartContext from "../../context/CartContext";
 import FavContext from "../../context/FavContext";
-
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-const geist = Geist({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], preload: true });
 
 export const metadata = {
   title: "Trendiva",
@@ -21,18 +21,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={geist.className}>
-        <ClothesContext>
-          <ProductContext>
-            <CartContext>
-              <FavContext>
-                <Header />
-                {children}
-                <Footer />
-                <ToastContainer />
-              </FavContext>
-            </CartContext>
-          </ProductContext>
-        </ClothesContext>
+        <div className="page-wrapper">
+          <ClothesContext>
+            <ProductContext>
+              <CartContext>
+                <FavContext>
+                  <Header />
+                  <main className="content">{children}</main>
+                  <Footer />
+                </FavContext>
+              </CartContext>
+            </ProductContext>
+          </ClothesContext>
+        </div>
+        <ToastContainer />
       </body>
     </html>
   );

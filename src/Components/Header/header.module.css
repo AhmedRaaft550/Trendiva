@@ -84,10 +84,26 @@
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease;
+  position: relative;
 }
-
 .link:hover {
   color: var(--color-primary);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-icon);
+  margin-left: 20px;
+  transition: 0.5s;
+}
+.link:hover::after {
+  width: 100%;
+  left: -20px;
 }
 
 .centerSection {

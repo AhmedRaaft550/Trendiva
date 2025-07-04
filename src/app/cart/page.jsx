@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { GlobalCartContext } from "../../../context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./cart.module.css";
 import { useRouter } from "next/navigation";
 import { FaTrash } from "react-icons/fa";
+import styles from "./cart.module.css";
 
 const Cart = () => {
   const { cart, removeFromCart } = useContext(GlobalCartContext);

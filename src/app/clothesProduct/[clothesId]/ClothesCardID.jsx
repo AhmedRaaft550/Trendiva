@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import styles from "../../product/[productid]/cardDetails.module.css";
 import { FaHeart } from "react-icons/fa";
 import Image from "next/image";
@@ -9,7 +9,7 @@ const ClothesCardID = ({
   handleCart,
   handleFav,
 }) => {
-  return (
+  return singleProduct ? (
     <div className={styles.cardDetails}>
       <div className={styles.imageWrapper} style={{ position: "relative" }}>
         <Image
@@ -49,6 +49,8 @@ const ClothesCardID = ({
         </button>
       </div>
     </div>
+  ) : (
+    <h1>Product is loading ...</h1>
   );
 };
 
