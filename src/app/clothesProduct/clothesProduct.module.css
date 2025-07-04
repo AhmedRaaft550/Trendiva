@@ -142,8 +142,22 @@
 
 @media (hover: none) and (pointer: coarse) {
   .btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .card:hover .btn {
     opacity: 1;
+    visibility: visible;
     transform: none;
-    pointer-events: auto;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .image {
+    transform: none;
   }
 }

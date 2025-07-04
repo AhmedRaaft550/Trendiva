@@ -141,3 +141,25 @@
   font-size: 1.5rem;
   color: var(--color-accent);
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .card:hover .btn {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .PImage {
+    transform: none;
+  }
+}
